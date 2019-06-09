@@ -15,10 +15,23 @@
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/materialize.min.css' %}"
-          media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/nouislider.min.css' %}"/>
-    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/opac.css' %}"/>
+    {#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/materialize.min.css' %}"#}
+    media="screen,projection"/>
+    {#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/nouislider.min.css' %}"/>#}
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/opac.css' %}"/>#}
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
     <link rel="shortcut icon" href=""/> {# href属性にファビコンファイルのURIを記述 #}
     <title>{% block head_title %}OPAC構築演習 | 知識情報演習I(後半) {% endblock head_title %}</title>
     {# スクリプトでブロッキングを起こさないものはここに記述 #}
@@ -176,9 +189,58 @@
 
 {% block script %}
   <!--JavaScript at end of body for optimized loading-->
-  <script type="text/javascript" src="{% static 'opac/js/materialize.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'opac/js/nouislider.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'opac/js/opac.js' %}"></script>
+  {#  <script type="text/javascript" src="{% static 'opac/js/materialize.min.js' %}"></script>#}
+  {#  <script type="text/javascript" src="{% static 'opac/js/nouislider.min.js' %}"></script>#}
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  {#  <script type="text/javascript" src="{% static 'opac/js/opac.js' %}"></script>#}
+  <script type="text/javascript">
+      var sidenavs = document.querySelectorAll('.sidenav')
+      for (var i = 0; i < sidenavs.length; i++) {
+          M.Sidenav.init(sidenavs[i]);
+      }
+      var dropdowns = document.querySelectorAll('.dropdown-trigger')
+      for (var i = 0; i < dropdowns.length; i++) {
+          M.Dropdown.init(dropdowns[i]);
+      }
+      var collapsibles = document.querySelectorAll('.collapsible')
+      for (var i = 0; i < collapsibles.length; i++) {
+          M.Collapsible.init(collapsibles[i]);
+      }
+      var featureDiscoveries = document.querySelectorAll('.tap-target')
+      for (var i = 0; i < featureDiscoveries.length; i++) {
+          M.FeatureDiscovery.init(featureDiscoveries[i]);
+      }
+      var materialboxes = document.querySelectorAll('.materialboxed')
+      for (var i = 0; i < materialboxes.length; i++) {
+          M.Materialbox.init(materialboxes[i]);
+      }
+      var modals = document.querySelectorAll('.modal')
+      for (var i = 0; i < modals.length; i++) {
+          M.Modal.init(modals[i]);
+      }
+      var parallax = document.querySelectorAll('.parallax')
+      for (var i = 0; i < parallax.length; i++) {
+          M.Parallax.init(parallax[i]);
+      }
+      var scrollspies = document.querySelectorAll('.scrollspy')
+      for (var i = 0; i < scrollspies.length; i++) {
+          M.ScrollSpy.init(scrollspies[i]);
+      }
+      var tabs = document.querySelectorAll('.tabs')
+      for (var i = 0; i < tabs.length; i++) {
+          M.Tabs.init(tabs[i]);
+      }
+      var tooltips = document.querySelectorAll('.tooltipped')
+      for (var i = 0; i < tooltips.length; i++) {
+          M.Tooltip.init(tooltips[i]);
+      }
+
+      var autocompletes = document.querySelectorAll('.autocomplete')
+      for (var i = 0; i < autocompletes.length; i++) {
+          M.Autocomplete.init(autocompletes[i]);
+      }
+  </script>
 {% endblock script %}
 </body>
 </html>

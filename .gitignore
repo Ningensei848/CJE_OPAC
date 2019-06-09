@@ -9,6 +9,8 @@ Pipfile*
 django/
 pytz/
 sqlparse/
+static/
+
 
 ### Django ###
 *.log
