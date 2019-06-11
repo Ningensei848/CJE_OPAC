@@ -1,0 +1,75 @@
+{% extends 'opac/base.html' %}
+
+{% block content %}
+  <ul class="tabs">
+    <li class="tab col s3"><a class="active" href="#mainpage">main</a></li>
+    <li class="tab col s3"><a href="#secondpage">sub</a></li>
+    {#      <li class="tab col s3"><a href="#test3">Test 3</a></li>#}
+    {#      <li class="tab col s3"><a href="#test4">Test 4</a></li>#}
+  </ul>
+
+  <div id="mainpage" class="col s12">
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+        <span class="card-title">
+          {% if biblio.sub_title %}
+            {{ biblio.title }}： {{ biblio.sub_title }}
+          {% else %}
+            {{ biblio.title }}
+          {% endif %}
+        </span>
+          {% if biblio.nbc %}<p>{{ biblio.nbc }}</p>{% endif %}
+          {% if biblio.isbn %}
+            <p><a href="https://iss.ndl.go.jp/books?rft.isbn={{ biblio.isbn }}">{{ biblio.isbn }}</a></p>{% endif %}
+          {% if biblio.responsibility %}<p>{{ biblio.responsibility }}</p>{% endif %}
+          {% if biblio.ed %}            <p>{{ biblio.ed }}</p>            {% endif %}
+          {% if biblio.publishedArea %} <p>{{ biblio.publishedArea }}</p> {% endif %}
+          {% if biblio.publisher %}     <p>{{ biblio.publishr }}</p>      {% endif %}
+          {% if biblio.publishedYear %} <p>{{ biblio.publishedYear }}</p> {% endif %}
+          {% if biblio.publishedMonth %}<p>{{ biblio.publishedMonth }}</p>{% endif %}
+          {% if biblio.page %}          <p>{{ biblio.page }}</p>          {% endif %}
+          {% if biblio.size %}          <p>{{ biblio.size }}</p>          {% endif %}
+          {% if biblio.series %}        <p>{{ biblio.series }}</p>        {% endif %}
+
+          {% if biblio.titleheading %}  <p>{{ biblio.titleheading }}</p>  {% endif %}
+          {% if biblio.authorheading %} <p>{{ biblio.authorheading }}</p> {% endif %}
+          {% if biblio.holdingsrecord %}<p>{{ biblio.holdingsrecord }}</p>{% endif %}
+          {% if biblio.holdingphys %}   <p>{{ biblio.holdingphys }}</p>   {% endif %}
+          {% if biblio.holdingloc %}    <p>{{ biblio.holdingloc }}</p>    {% endif %}
+
+          {% if biblio.note or biblio.isbn %}
+            <div class="right-align">
+            {% if biblio.note %}
+              <!-- Modal Trigger -->
+              <a class="waves-effect waves-light btn modal-trigger"
+                 href="#modal_NOTE">Note</a>
+              <!-- Modal Structure -->
+              <div id="modal_NOTE" class="modal">
+                <div class="modal-content">
+                  <h4>NOTE</h4>
+                  <p>{{ biblio.note }}</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+                </div>
+              </div>
+            {% endif %}
+            </div>
+          {% endif %}  {# is_exist note OR isbn #}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="secondpage" class="col s12">
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

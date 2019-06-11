@@ -5,7 +5,7 @@ from opac.models.bibliography import BIBLIO
 
 
 class ResultListView(ListView):
-    template_name = 'result_list.html'
+    template_name = 'opac/result_list.html'
     model = BIBLIO
     paginate_by = 20  # if pagination is desired
     biblio = BIBLIO.objects.all()
@@ -18,7 +18,7 @@ class ResultListView(ListView):
         for word in queries.split():
             query |= Q(title__icontains=word) | Q(sub_title__icontains=word) | Q(titleheading__icontains=word)
 
-        return biblio.filter(query).distinct()
+        return biblio.filter(query).distinct().order_by('publishedYear').reverse()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -5,4 +5,4 @@ from opac.models.bibliography import BIBLIO
 
 class IndexView(TemplateView):
 
-    template_name = 'index.html'
+    template_name = 'opac/index.html'

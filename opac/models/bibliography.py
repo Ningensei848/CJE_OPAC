@@ -148,6 +148,16 @@ class BIBLIO(models.Model):
     def __str__(self):
         result = str(self.nbc)
         return result
+
+    # Enable to iterate in DetailView: cf. https://bit.ly/31rfJgo
+    # def get_field_values(self):
+    #     """
+    #     {% for value in project.get_field_values %}
+    #       {{ value }}
+    #     {% endfor %}
+    #     :return:
+    #     """
+    #     return [field.value_to_string(self) for field in BIBLIO._meta.fields]
 # ###################################################################################################################
 
 # CREATE TABLE IF NOT EXISTS "opac_biblio" ("nbc" varchar(31) NOT NULL PRIMARY KEY, "isbn" varchar(63) NOT NULL, "title" varchar(255) NOT NULL, "sub_title" varchar(255) NOT NULL, "responsibility" varchar(255) NOT NULL, "ed" varchar(31) NOT NULL, "publishedArea" varchar(31) NOT NULL, "publisher" varchar(255) NOT NULL, "publishedYear" integer NOT NULL, "publishedMonth" integer NOT NULL, "page" integer NOT NULL, "size" varchar(31) NOT NULL, "series" varchar(255) NOT NULL, "note" text NOT NULL, "titleheading" varchar(255) NOT NULL, "authorheading" varchar(255) NOT NULL, "holdingsrecord" varchar(31) NOT NULL, "holdingphys" varchar(255) NOT NULL, "holdingloc" varchar(31) NOT NULL);

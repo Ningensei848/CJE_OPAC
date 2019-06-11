@@ -19,8 +19,12 @@ from django.urls import path
 
 from opac.views.index import IndexView
 from opac.views.result_list import ResultListView
+from opac.views.biblio_detail import BiblioDetailView
+
+app_name = 'opac'
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('result/', ResultListView.as_view(), name='result'),
+    path('detail/<slug:nbc>/', BiblioDetailView.as_view(), name='biblio_detail'),
 ]
