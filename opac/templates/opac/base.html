@@ -15,11 +15,11 @@
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-{#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/materialize.min.css' %}" media="screen,projection"/>#}
-{#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/nouislider.min.css' %}"/ >#}
+    {#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/materialize.min.css' %}" media="screen,projection"/>#}
+    {#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/nouislider.min.css' %}"/ >#}
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-{#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/opac.css' %}"/>#}
+    {#    <link type="text/css" rel="stylesheet" href="{% static 'opac/css/opac.css' %}"/>#}
     <style>
       body {
         display: flex;
@@ -29,6 +29,15 @@
 
       main {
         flex: 1 0 auto;
+      }
+
+      table {
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      table td {
+        overflow-wrap: break-word;
       }
     </style>
     <link rel="shortcut icon" href=""/> {# href属性にファビコンファイルのURIを記述 #}
