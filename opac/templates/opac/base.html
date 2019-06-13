@@ -12,6 +12,7 @@
     <meta name="description" content=""> {# content属性にページの紹介文を記述 #}
     <meta name="author" content="K. Kubokawa"> {# content属性にページの著者情報を記述 #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Install Fonts and Icons -->
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -39,7 +40,31 @@
       table td {
         overflow-wrap: break-word;
       }
+
+      /*Black color to the text*/
+      .tabs .tab a {
+          color: #2e7d32;
+      }
+
+      /*Text color on hover*/
+      .tabs .tab a:hover {
+        background-color: #64dd17;
+        color: #ffffff;
+      }
+
+      /*Background and text color when a tab is active*/
+
+      .tabs .tab a.active {
+        background-color: #c8e6c9;
+        color: #2e7d32;
+      }
+
+      /*Color of underline*/
+      .tabs .indicator {
+        background-color: #2e7d32;
+      }
     </style>
+    {% block style %}{% endblock style %}
     <link rel="shortcut icon" href=""/> {# href属性にファビコンファイルのURIを記述 #}
     <title>{% block head_title %}BASE TITLE{% endblock head_title %} | OPAC構築演習 | 知識情報演習I(後半)</title>
     {# スクリプトでブロッキングを起こさないものはここに記述 #}
@@ -50,7 +75,7 @@
 
 <body>
 {% block navbar %}
-  <nav>
+  <nav class="green lighten-1">
     <div class="nav-wrapper">
       <div class="row">
         <div class="col s12">
@@ -127,7 +152,7 @@
 </main>
 
 {% block footer %}
-  <footer class="page-footer">
+  <footer class="page-footer green lighten-1">
     <div class="footer-copyright">
       <div class="container">
         &copy; 2019 K. Kubokawa @Ningensei848
@@ -140,7 +165,7 @@
 {% block chatbutton %}
   <!-- Gitter Chat Link -->
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large red" href="https://github.com/Ningensei848/CJE_OPAC/issues" target="_blank">
+    <a class="btn-floating btn-large cyan" href="https://github.com/Ningensei848/CJE_OPAC/issues" target="_blank">
       <i class="large material-icons">chat</i>
     </a>
   </div>

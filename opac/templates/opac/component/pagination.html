@@ -17,7 +17,7 @@
   <!-- 数字の部分 -->
   {% for num in page_obj.paginator.page_range %}
     {% if page_obj.number == num %}
-      <li class="active"><a href="#!">{{ num }}</a></li>
+      <li class="active cyan darken-2"><a href="#!">{{ num }}</a></li>
     {% elif num <= 2 %}
       <li class="waves-effect"><a href="?{% url_replace request 'page' num %}">{{ num }}</a></li>
     {% elif page_obj.paginator.num_pages <= 8 %} {# "新しい"で検索するとちょうど8ページ #}

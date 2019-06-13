@@ -17,12 +17,13 @@
           <div class="collection">
             {% for biblio in object_list %}
               {% if biblio.sub_title %}
-                <a href="{% url 'opac:biblio_detail' biblio.nbc %}" class="collection-item">{{ biblio.title }}： {{ biblio.sub_title }}</a>
+                <a href="{% url 'opac:biblio_detail' biblio.nbc %}"
+                   class="collection-item">{{ biblio.title }}： {{ biblio.sub_title }}</a>
               {% else %}
                 <a href="{% url 'opac:biblio_detail' biblio.nbc %}" class="collection-item">{{ biblio.title }}</a>
               {% endif %}
             {% empty %}
-              <li>No Bibliography yet.</li>
+              <h6 class="center-align">No Bibliography yet.</h6>
             {% endfor %}
           </div>
           {% include 'opac/component/pagination.html' %}
@@ -35,8 +36,7 @@
     <div class="container">
       <div class="card">
         <div class="card-content">
-          <h1>検索結果</h1>
-          <p>あなたが検索したのは、{{ query }} です。</p>
+          <span class="card-title">検索結果: "{{ query }}"</span>
           <div class="collection">
             {% for biblio in responsibility %}
               {% if biblio.sub_title %}
@@ -45,7 +45,7 @@
                 <a href="#!" class="collection-item">{{ biblio.title }}</a>
               {% endif %}
             {% empty %}
-              <li>No Bibliography yet.</li>
+              <h6 class="center-align">No Bibliography yet.</h6>
             {% endfor %}
           </div>
         </div>
