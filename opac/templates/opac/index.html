@@ -1,36 +1,53 @@
 {% extends 'opac/base.html' %}
 
 {% block head_title %}OPAC for JBISC{% endblock head_title %}
+{% block style %}
+  <!-- Additional Style-->
+  <style>
+    /* cf. https://akros-ac.jp/8277/*/
+    .report_specification {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 50%; /* 高さの調整 */
+    }
 
+    .report_specification iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+{% endblock style %}
 {% block content %}
 
   <ul class="tabs">
     <li class="tab col s3"><a class="active" href="#mainpage">home</a></li>
     <li class="tab col s3"><a href="#description">description</a></li>
-    {#      <li class="tab col s3"><a href="#test3">Test 3</a></li>#}
-    {#      <li class="tab col s3"><a href="#test4">Test 4</a></li>#}
+    <li class="tab col s3"><a href="#specification">specification</a></li>
+    {#    <li class="tab col s3"><a href="#test">Test 4</a></li>#}
   </ul>
-
 
   <div id="mainpage" class="col s12">
     <div class="container">
       <div class="card">
         <div class="card-image">
-          <img src="http://klis.tsukuba.ac.jp/assets/images/slider/img02.jpg">
-          <span class="card-title">OPAC for JBISC</span>
+          <a href="http://klis.tsukuba.ac.jp/" target="_blank">
+            <img src="http://klis.tsukuba.ac.jp/assets/images/slider/img03.jpg">
+          </a>
+          <span class="card-title">OPAC<br/>for JBISC</span>
         </div>
         <div class="card-content">
-          <div class="row">
-            <div class="col s12">
-              <div class="row">
-                <form class="input-field col s12" method="get" action="{% url 'opac:result' %}">
-                  <i class="material-icons prefix">search</i>
-                  <label for="search-input">Search</label>
-                  <input id="search" type="text" name="search" required>
-                </form>
-              </div>
-            </div>
-          </div>
+          <form class="input-field" method="get" action="{% url 'opac:result' %}">
+            <i class="material-icons prefix">search</i>
+            <input id="search" type="text" name="search" class="validate" required>
+            <label for="search-input">Search</label>
+            <span class="helper-text" data-error="なんらかの入力が必要です" data-success="検索中...">
+              タイトル, 著者名, その他関連情報などのキーワードを入力してください
+            </span>
+          </form>
         </div>
       </div>
     </div>
@@ -40,7 +57,7 @@
     <div class="container">
       <div class="card">
         <div class="card-content">
-          <h3>Tab 1</h3>
+          <h3>Underconstruction ¯¯\_(ヅ)_/¯¯\_(ツ)_/¯¯</h3>
           <blockquote>
             We’re excited to announce that jQuery is no longer a dependency in 1.0!<br> - <a
                   href="https://medium.com/@materializecss/materialize-to-1-0-and-beyond-e0233b8ac15" target="_blank">The
@@ -70,5 +87,22 @@
       </div>
     </div>
   </div>
+  <div id="specification" class="col s12">
+    <div class="container">
+      <div class="card">
+        <div class="report_specification">
+          <iframe src="http://klis.tsukuba.ac.jp/klib/Subjects/KIRL-I/text/report.pdf"
+                  width="600" height="400" style="border:0" allowfullscreen>
+          </iframe>
+        </div>
+        <div class="card-action center-align">
+          <a href="https://www.u.tsukuba.ac.jp/~s1611502/report_specification.pdf" target="_blank"
+             class="waves-effect waves-light">view local file</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 {% endblock content %}
