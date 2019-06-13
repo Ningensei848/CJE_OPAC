@@ -24,10 +24,10 @@
 {% block content %}
 
   <ul class="tabs">
-    <li class="tab col s3"><a class="active" href="#mainpage">home</a></li>
+    <li class="tab col s3"><a href="#mainpage" class="active">home</a></li>
     <li class="tab col s3"><a href="#description">description</a></li>
+    <li class="tab col s3"><a href="#report">report</a></li>
     <li class="tab col s3"><a href="#specification">specification</a></li>
-    {#    <li class="tab col s3"><a href="#test">Test 4</a></li>#}
   </ul>
 
   <div id="mainpage" class="col s12">
@@ -83,6 +83,134 @@
             a link</a>
           <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is
             a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="report" class="col s12">
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">知識情報演習 I (後半) レポート課題 (令和元年度)</span>
+          <ul class="collapsible popout">
+            <li class="active">
+              <div class="collapsible-header"><i class="material-icons">info</i>Information</div>
+              <div class="collapsible-body">
+                <span>
+                  学籍番号，氏名，授業名，火曜組 or 水曜組<br/>
+                  20YYXXXXX，K. Kubokawa，知識情報演習I（後半），水曜組
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">place</i>OPAC URL</div>
+              <div class="collapsible-body">
+                <span>
+                  構築した OPAC の URL(もしくはリンク)<br/>
+                  <a href="https://cgi.u.tsukuba.ac.jp/~s1611502/django.cgi/opac/" target="_blank">
+                    https://cgi.u.tsukuba.ac.jp/~s1611502/django.cgi/opac/
+                  </a>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">folder</i>Source</div>
+              <div class="collapsible-body">
+                <span>
+                  CGI プログラムのソースリストおよびその説明<br/>
+                  <a href="https://github.com/Ningensei848/CJE_OPAC" target="_blank">
+                    https://github.com/Ningensei848/CJE_OPAC
+                  </a>
+                  を参照のこと
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">layers</i>Database</div>
+              <div class="collapsible-body">
+                <span>
+                  リレーション (テーブル) の構造とその説明<br/>
+                </span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">flash_on</i>Originality & Ingenuity</div>
+              <div class="collapsible-body">
+                <h6>OPAC を構築する上で工夫した点</h6>
+                <div class="container">
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="card horizontal">
+                        <div class="card-stacked">
+                          <div class="card-content">
+                            <span class="card-title">Choose Django</span>
+                            <p>
+                              Python Web Frameworkである「Django」を採用した。
+                              強力なORMによりほぼSQLを書かずに済んだ。
+                            </p>
+                          </div>
+                          <div class="card-action center-align">
+                            <a href="https://www.djangoproject.com/">What is "Django" ?</a>
+                          </div>
+                        </div>
+                        <div class="card-image">
+                          <img src="https://static.djangoproject.com/img/icon-touch.e4872c4da341.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12">
+                      <div class="card horizontal">
+                        <div class="card-image">
+                          <img src="https://materializecss.com/images/favicon/apple-touch-icon-152x152.png">
+                        </div>
+                        <div class="card-stacked">
+                          <div class="card-content">
+                            <span class="card-title">Get "Materialize"</span>
+                            <p>
+                              CSSフレームワークに「Materialize」を採用した。
+                              マテリアルデザインが簡単に制作できる優れものである。
+                            </p>
+                          </div>
+                          <div class="card-action center-align">
+                            <a href="https://materializecss.com">What is "Materialize" ?</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12">
+                      <div class="card horizontal">
+                        <div class="card-stacked">
+                          <div class="card-content">
+                            <span class="card-title">Analyze on Colaboratory</span>
+                            <p>
+                              .txtファイルの解析および整形をGoogle Colaboratory上で行なった。
+                              ブラウザ上からpython3が使える快適な実行環境である。
+                            </p>
+                          </div>
+                          <div class="card-action center-align">
+                            <a href="https://colab.research.google.com">What is "Colaboratory" ?</a>
+                          </div>
+                        </div>
+                        <div class="card-image">
+                          <img src="https://colab.research.google.com/img/colab_favicon_256px.png">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">whatshot</i>Knowledge</div>
+              <div class="collapsible-body">
+                <span>実際に構築してみて得られた知見</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card-action center-align">
+          <a href="https://www.u.tsukuba.ac.jp/~s1611502/CJE/report.pdf" target="_blank"
+             class="waves-effect waves-light">view local report file</a>
         </div>
       </div>
     </div>
