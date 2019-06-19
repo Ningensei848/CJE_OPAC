@@ -1,17 +1,9 @@
 {% extends 'opac/base.html' %}
 
 {% block content %}
-  <ul class="tabs">
-    <li class="tab col s3"><a class="active" href="#mainpage">main</a></li>
-    <li class="tab col s3"><a href="#secondpage">sub</a></li>
-    {#      <li class="tab col s3"><a href="#test3">Test 3</a></li>#}
-    {#      <li class="tab col s3"><a href="#test4">Test 4</a></li>#}
-  </ul>
-
-  <div id="mainpage" class="col s12">
-    <div class="container">
-      <div class="card">
-        <div class="card-content">
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
         <span class="card-title">
           {% if biblio.sub_title %}
             {{ biblio.title }}： {{ biblio.sub_title }}
@@ -19,148 +11,138 @@
             {{ biblio.title }}
           {% endif %}
         </span>
-          <table class="striped responsive-table">
-            <tbody>
-            {% if biblio.series %}
+        <table class="striped">
+          <tbody>
+          {% if biblio.series %}
+            <tr>
               <td>Series</td>
               <td>{{ biblio.series }}</td>
-            {% endif %}
-            {% if biblio.nbc %}
-              <tr>
-                <td>NBC</td>
-                <td>{{ biblio.nbc }}</td>
-              </tr>
-            {% endif %}
-            {% if biblio.isbn %}
-              <tr>
-                <td>ISBN</td>
-                <td>{{ biblio.isbn }}</td>
-              </tr>
-            {% else %}
-              <tr>
-                <td>ISBN</td>
-                <td>（ISBNが与えられていません）</td>
-              </tr>
-            {% endif %}
-            {% if biblio.responsibility %}
-              <tr>
-                <td>Responsibility</td>
-                <td>{{ biblio.responsibility }}</td>
-              </tr>
-            {% endif %}
-            {% if biblio.ed %}
-              <tr>
-                <td>Edition</td>
-                <td>{{ biblio.ed }}</td>
-              </tr>
-            {% endif %}
-            {% if biblio.publishedArea %}
+            </tr>
+          {% endif %}
+          {% if biblio.nbc %}
+            <tr>
+              <td>NBC</td>
+              <td>{{ biblio.nbc }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.isbn %}
+            <tr>
+              <td>ISBN</td>
+              <td>{{ biblio.isbn }}</td>
+            </tr>
+          {% else %}
+            <tr>
+              <td>ISBN</td>
+              <td>（ISBNが与えられていません）</td>
+            </tr>
+          {% endif %}
+          {% if biblio.responsibility %}
+            <tr>
+              <td>Responsibility</td>
+              <td>{{ biblio.responsibility }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.ed %}
+            <tr>
+              <td>Edition</td>
+              <td>{{ biblio.ed }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.publishedArea %}
+            <tr>
               <td>Published Area</td>
               <td>{{ biblio.publishedArea }}</td>
-            {% endif %}
-            {% if biblio.publisher %}
-              <tr>
-                <td>Publisher</td>
-                <td>{{ biblio.publisher }}</td>
-              </tr>
-            {% endif %}
-            {% if biblio.publishedYear %}
+            </tr>
+          {% endif %}
+          {% if biblio.publisher %}
+            <tr>
+              <td>Publisher</td>
+              <td>{{ biblio.publisher }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.publishedYear %}
+            <tr>
               <td>Published</td>
               <td>
                 {{ biblio.publishedYear }}{% if biblio.publishedMonth %}.{{ biblio.publishedMonth }}{% endif %}
               </td>
-            {% endif %}
-            {% if biblio.page or biblio.size %}
-              <tr>
-                <td>Phys.</td>
-                <td>{% if biblio.page %}{{ biblio.page }}{% endif %}
-                  {% if biblio.size %} ; {{ biblio.size }}{% endif %}</td>
-              </tr>
-            {% else %}
-              <tr>
-                <td>Phys.</td>
-                <td>Not Found.</td>
-              </tr>
-            {% endif %}
-
-            {% if biblio.titleheading %}
-              <tr>
-                <td>TITLE HEADING</td>
-                <td>{{ biblio.titleheading }}</td>
-              </tr>
-            {% endif %}
-
-            {% if biblio.authorheading %}
-              <tr>
-                <td>AUTHOR HEADING</td>
-                <td>{{ biblio.authorheading }}</td>
-              </tr>
-            {% endif %}
-
-            {% if biblio.holdingsrecord %}
-              <tr>
-                <td>HOLDINGS Record</td>
-                <td>{{ biblio.holdingsrecord }}</td>
-              </tr>
-            {% endif %}
-
-            {% if biblio.holdingphys %}
-              <tr>
-                <td>HOLDING Phys.</td>
-                <td>{{ biblio.holdingphys }}</td>
-              </tr>
-            {% endif %}
-            {% if biblio.holdingloc %}
-              <tr>
-                <td>HOLDING Location</td>
-                <td>{{ biblio.holdingloc }}</td>
-              </tr>
-            {% endif %}
-            {% if biblio.note %}
-              <!-- Modal Trigger -->
-              <tr>
-                <td>NOTE</td>
-                <td>
-                  <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modal_NOTE">
-                    <i class="material-icons">announcement</i>
-                  </a>
-                </td>
-              </tr>
-              <!-- Modal Structure -->
-              <div id="modal_NOTE" class="modal">
-                <div class="modal-content left-align">
-                  <h4>NOTE</h4>
-                  <p>{{ biblio.note }}</p>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
-                </div>
+            </tr>
+          {% endif %}
+          {% if biblio.page or biblio.size %}
+            <tr>
+              <td>Phys.</td>
+              <td>{% if biblio.page %}{{ biblio.page }}{% endif %}
+                {% if biblio.size %} ; {{ biblio.size }}{% endif %}</td>
+            </tr>
+          {% else %}
+            <tr>
+              <td>Phys.</td>
+              <td>Not Found.</td>
+            </tr>
+          {% endif %}
+          {% if biblio.titleheading %}
+            <tr>
+              <td>TITLE HEADING</td>
+              <td>{{ biblio.titleheading }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.authorheading %}
+            <tr>
+              <td>AUTHOR HEADING</td>
+              <td>{{ biblio.authorheading }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.holdingsrecord %}
+            <tr>
+              <td>HOLDINGS Record</td>
+              <td>{{ biblio.holdingsrecord }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.holdingphys %}
+            <tr>
+              <td>HOLDING Phys.</td>
+              <td>{{ biblio.holdingphys }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.holdingloc %}
+            <tr>
+              <td>HOLDING Location</td>
+              <td>{{ biblio.holdingloc }}</td>
+            </tr>
+          {% endif %}
+          {% if biblio.note %}
+            <!-- Modal Trigger -->
+            <tr>
+              <td>NOTE</td>
+              <td>
+                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modal_NOTE">
+                  <i class="material-icons">announcement</i>
+                </a>
+              </td>
+            </tr>
+            <!-- Modal Structure -->
+            <div id="modal_NOTE" class="modal">
+              <div class="modal-content left-align">
+                <h4>NOTE</h4>
+                <p>{{ biblio.note }}</p>
               </div>
-            {% endif %}
-            </tbody>
-          </table>
-
-          <div class="card-action">
-            <div class="center-align">
-              {% if biblio.isbn %}
-                <a class="waves-effect waves-light btn modal-trigger pulse" target=”_blank”
-                   href="https://iss.ndl.go.jp/books?rft.isbn={{ biblio.isbn }}">Open NDL Search</a>
-              {% endif %}
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+              </div>
             </div>
+          {% endif %}
+          </tbody>
+        </table>
+
+        <div class="card-action">
+          <div class="center-align">
+            {% if biblio.isbn %}
+              <a class="waves-effect waves-light btn modal-trigger pulse" target=”_blank”
+                 href="https://iss.ndl.go.jp/books?rft.isbn={{ biblio.isbn }}">Open NDL Search</a>
+            {% endif %}
           </div>
         </div>
       </div>
     </div>
-
   </div>
-  <div id="secondpage" class="col s12">
-    <div class="container">
-      <div class="card">
-        <div class="card-content">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
 {% endblock content %}
