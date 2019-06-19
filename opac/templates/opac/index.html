@@ -12,7 +12,7 @@
       position: relative;
       width: 100%;
       height: 0;
-      padding-top: 70%; /* 高さの調整 */
+      padding-top: 50%; /* 高さの調整 */
     }
 
     .report_specification iframe {
@@ -64,32 +64,169 @@
     <div class="container">
       <div class="card">
         <div class="card-content">
-          <h3>Underconstruction ¯¯\_(ヅ)_/¯¯\_(ツ)_/¯¯</h3>
-          <blockquote>
-            We’re excited to announce that jQuery is no longer a dependency in 1.0!<br> - <a
-                  href="https://medium.com/@materializecss/materialize-to-1-0-and-beyond-e0233b8ac15" target="_blank">The
-            Materialize Team</a>
-          </blockquote>
-          <ul class="collapsible">
-            <li>
-              <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-              <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-          </ul>
-        </div>
-        <div class="card-action">
-          <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is
-            a link</a>
-          <a href="#" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am a tooltip">This is
-            a link</a>
+          <span class="card-title"><h1>OPACに関する解説</h1></span>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a href="#how_to_design">How to design</a></li>
+              <li class="tab"><a class="active" href="#feature">feature</a></li>
+              <li class="tab"><a href="#how_to_work">How to work</a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4">
+            <div id="how_to_design">
+              <span class="card-title">もはや jQuery を必要としない ――。</span>
+              <blockquote>
+                We’re excited to announce that jQuery is no longer a dependency in 1.0!<br> - <a
+                      href="https://medium.com/@materializecss/materialize-to-1-0-and-beyond-e0233b8ac15"
+                      target="_blank">The
+                Materialize Team</a>
+              </blockquote>
+              <p>容易に記述できるように設計されたJavaScriptライブラリであるjQueryは、
+                様々な理由から時代遅れになりつつある。これを排し、純粋にCSSとJSだけで記述できるようにしたのがこの "Materialize" である。
+                特徴的なのは脱jQueryを宣伝していることだけでなく、「マテリアルデザイン」を簡単に取り入れることが出来ること、そして
+                レスポンシブデザインに対応していることである。</p>
+              <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">brush</i>jQuery とは</div>
+                  <div class="collapsible-body">
+                    <span>jQueryは高速、小型、そして機能豊富なJavaScriptライブラリです。
+                      HTMLドキュメントのトラバーサルと操作、イベント処理、アニメーション、そしてAjaxのようなことが、
+                      多数のブラウザにわたって機能する使いやすいAPIによってさらに簡単になります。
+                      汎用性と拡張性の組み合わせで、jQueryは何百万もの人々がJavaScriptを書く方法を変えました。(translated by Google)
+                      </span>
+                    <div class="center-align">
+                      <a href="https://jquery.com/" class="waves-effect waves-light btn">Official page</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">color_lens</i>Materialize とは</div>
+                  <div class="collapsible-body">
+                    <span>
+                      Googleが作成および設計したMaterial Designは、成功したデザインの古典的な原則と革新性およびテクノロジーを組み合わせたデザイン言語です。
+                      Googleの目標は、あらゆるプラットフォーム上のすべての製品にわたって統一されたユーザーエクスペリエンスを可能にするデザインシステムを開発することです。
+                      (translated by Google)
+                    </span>
+                    <div class="center-align">
+                      <a href="https://materializecss.com/" class="waves-effect waves-light btn">Official page</a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">tablet</i>レスポンシブデザイン とは</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <blockquote>
+                        レスポンシブウェブデザイン (Responsive Web Design, RWD) は、
+                      閲覧者の画面サイズまたはウェブブラウザに応じてデスクトップウェブページが閲覧できることを目指したウェブデザインの手法。
+                      加えて、1つのウェブサイトで多様なデバイスを同様にサポートすることもレスポンシブウェブデザインのタスクに含まれている点を理解しておくことが重要である。
+                      </blockquote>
+                    </span>
+                    <div class="center-align">
+                      <a href="https://bit.ly/2KghvLx" class="waves-effect waves-light btn">view in wikipedia</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div id="feature">
+              <span class="card-title">特徴について</span>
+              <p>トップ画面からキーワードを入れるだけですぐに検索ができるようにした。
+                画面遷移後のページ上部のタブを切り替えることで、「タイトル」「責任表示」「シリーズ」「出版情報」「ANY検索」
+                から知りたいカテゴリだけを選択して結果一覧を見ることが出来る。<br/>他にもいくつかの特徴があるが、以下を参照されたい。
+              </p>
+              <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">link</i>NDLサーチへのリンクを付与</div>
+                  <div class="collapsible-body">
+                    <span>
+                      ISBNが付与されているものは、それをNDLサーチの末尾とつなげたURLをつくることで、NDL上の検索結果に跳べるようにした。
+                      リンクが有ることがわかりやすいように、ボタンにはウェーブエフェクトをかけてある。
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">cloud_done</i>Githubへのソースコード公開</div>
+                  <div class="collapsible-body">
+                    <span>
+                      Githubにソースコードを公開した。
+                      このプロジェクトのIssueページに最短でたどり着けるように、OPACの画面右下にフロートボタンを配置してある。
+                      なにか不備があれば、ここから報告してほしい。
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">whatshot</i>全学計算機上でDjango via CGI</div>
+                  <div class="collapsible-body">
+                    <span>
+                      最も苦労したのが、このDjangoを全学計算機上で動かすことだ。
+                      いろいろな制約に苦しめられながらも、なんとかCGI経由で動かすことができた。
+                      機会があれば、また別途詳細をまとめた記事を書こうと思う（書かないかも）
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div id="how_to_work">
+              <span class="card-title">Don't repeat yourself</span>
+              <blockquote>
+                Django makes it easier to build better Web apps more quickly and with less code. <br/>
+                - <a href="https://www.djangoproject.com/">Django Official Page</a>
+              </blockquote>
+              <p>webページの裏側で動くシステムを構築するために、Pythonで記述されたフレームワークの一つである "Django" を採用した。
+                強力なORMを持ち、ほぼSQL文を書くこと無く検索クエリ等を扱うことができた。また、テンプレートエンジンを用いて、
+                少ない記述量で様々なページ構造を実現するに至った。</p>
+              <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">developer_board</i>Django とは</div>
+                  <div class="collapsible-body">
+                    <span>
+                      Pythonで書かれたWebフレームワークのひとつである。
+                      Pythonで書けるのはとてもラクであり、かつ色々なライブラリがつかえて拡張性が高い。
+                      その分移り変わりも早いので、習熟には賞味期限がある。
+                      機械学習とも相性が良いので、ぜひそちらでも応用したい。
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">build</i>ORM とは</div>
+                  <div class="collapsible-body">
+                    <span>
+                    <blockquote>
+                      オブジェクト関係マッピング（英: Object-relational mapping、O/RM、ORM）とは、
+                      データベースとオブジェクト指向プログラミング言語の間の非互換なデータを変換するプログラミング技法である。
+                      オブジェクト関連マッピングとも呼ぶ。
+                      実際には、オブジェクト指向言語から使える「仮想」オブジェクトデータベースを構築する手法である。
+                      （出典：wikipedia）
+                    </blockquote>
+                      つまり、SQLを直で書かなくてもデータベースが操作できるということであり、これには本当に助けられた。
+                      データの数がたかだか20,000無い程度なので気にならない速度で処理できるが、これがもっと多くなったときにどうするかが
+                      個人的な課題と言える。
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">drive_eta</i>テンプレートエンジン とは</div>
+                  <div class="collapsible-body">
+                    <span>
+                      <blockquote>
+                        テンプレートエンジンはテンプレートと呼ばれる雛形と、あるデータモデルで表現される入力データを合成し、
+                      成果ドキュメントを出力するソフトウェアまたはソフトウェアコンポーネントである。
+                      テンプレートおよび成果ドキュメントは複数のこともある。成果ドキュメントには様々なフォーマットのものがあり、
+                      文書・ウェブページ・ソースコードなどがその例で、ドキュメント全体ではなく、その一部を出力することもある。
+                      （出典：wikipedia）
+                      </blockquote>
+                      つまり、本来は静的なリソースであるHTML文書などを、動的に生成することが出来るようになるということである。
+                      これにより、検索結果に対してすべて事前に文書を用意して無くとも良くなったし、
+                      一部分だけ書いてそれを条件分岐させて切り貼りするなんとこともできるようになった。
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -144,7 +281,8 @@
                         <img class="activator" src="https://colab.research.google.com/img/colab_favicon_256px.png">
                       </div>
                       <div class="card-content">
-                          <span class="card-title activator grey-text text-darken-4">Colaboratory<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4">Colaboratory<i
+                                class="material-icons right">more_vert</i></span>
                       </div>
                       <div class="card-reveal">
                           <span class="card-title grey-text text-darken-4">
@@ -166,7 +304,8 @@
                         <img class="activator" src="https://static.djangoproject.com/img/icon-touch.e4872c4da341.png">
                       </div>
                       <div class="card-content">
-                          <span class="card-title activator grey-text text-darken-4">Django<i class="material-icons right">more_vert</i>
+                          <span class="card-title activator grey-text text-darken-4">Django<i
+                                  class="material-icons right">more_vert</i>
                           </span>
                       </div>
                       <div class="card-reveal">
@@ -190,7 +329,8 @@
                              src="https://materializecss.com/images/favicon/apple-touch-icon-152x152.png">
                       </div>
                       <div class="card-content">
-                          <span class="card-title activator grey-text text-darken-4">Materialize<i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4">Materialize<i
+                                class="material-icons right">more_vert</i></span>
                       </div>
                       <div class="card-reveal">
                           <span class="card-title grey-text text-darken-4">
