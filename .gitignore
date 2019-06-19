@@ -5,6 +5,8 @@
 
 # User add
 
+cje/
+opac.cgi
 Pipfile*
 django/
 pytz/
