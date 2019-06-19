@@ -5,32 +5,15 @@
   <ul class="tabs">
     <li class="tab col s3"><a class="active" href="#search_title">title</a></li>
     <li class="tab col s3"><a href="#search_responsibility">responsibility</a></li>
-    {#      <li class="tab col s3"><a href="#test3">Test 3</a></li>#}
-    {#      <li class="tab col s3"><a href="#test4">Test 4</a></li>#}
+    <li class="tab col s3"><a href="#search_publication">publication</a></li>
+    <li class="tab col s3"><a href="#search_series">series</a></li>
+    <li class="tab col s3"><a href="#search_any">ANY</a></li>
   </ul>
 
-  <div id="search_title" class="col s12">
-    <div class="container">
-      <div class="card">
-        <div class="card-content">
-          <span class="card-title">検索結果: "{{ query }}"</span>
-          <div class="collection">
-            {% for biblio in object_list %}
-              {% if biblio.sub_title %}
-                <a href="{% url 'opac:biblio_detail' biblio.nbc %}"
-                   class="collection-item">{{ biblio.title }}： {{ biblio.sub_title }}</a>
-              {% else %}
-                <a href="{% url 'opac:biblio_detail' biblio.nbc %}" class="collection-item">{{ biblio.title }}</a>
-              {% endif %}
-            {% empty %}
-              <h6 class="center-align">No Bibliography yet.</h6>
-            {% endfor %}
-          </div>
-          {% include 'opac/component/pagination.html' %}
-        </div>
-      </div>
-    </div>
-  </div>
-  {% include 'opac/secondpage.html' %}
+  {% include 'opac/result_list/TITLE.html' %}
+  {% include 'opac/result_list/RESPONSIBILITY.html' %}
+  {% include 'opac/result_list/PUB.html' %}
+  {% include 'opac/result_list/SERIES.html' %}
+  {% include 'opac/result_list/ANY.html' %}
 
 {% endblock content %}

@@ -1,0 +1,76 @@
+<div id="search_series" class="col s12">
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">検索結果: "{{ query }}"</span>
+        <div class="collection">
+          {% for biblio in result_series %}
+            {% if biblio.sub_title %}
+              <a href="{% url 'opac:biblio_detail' biblio.nbc %}"
+                 class="collection-item">{{ biblio.title }}： {{ biblio.sub_title }}</a>
+            {% else %}
+              <a href="{% url 'opac:biblio_detail' biblio.nbc %}" class="collection-item">{{ biblio.title }}</a>
+            {% endif %}
+          {% empty %}
+            <h6 class="center-align">No Bibliography yet.</h6>
+          {% endfor %}
+        </div>
+
+        {% block pagination %}
+          {% load support_pagination %}
+
+          <h6 class="right-align">{{ page_obj_series.paginator.count }} 件の検索結果</h6>
+          <ul class="pagination center-align">
+            <!-- 前へ の部分 -->
+            {% if page_obj_series.has_previous %}
+              <li class="waves-effect">
+                <a href="?{% url_replace request 'page' page_obj_series.previous_page_number %}#search_series">
+                  <i class="material-icons">navigate_before</i></a>
+              </li>
+            {% else %}
+              <li class="disabled">
+                <i class="material-icons">navigate_before</i>
+              </li>
+            {% endif %}
+
+            <!-- 数字の部分 -->
+            {% for num in page_obj_series.paginator.page_range %}
+              {% if page_obj_series.number == num %}
+                <li class="active cyan darken-2"><a href="#!">{{ num }}</a></li>
+              {% elif num <= 2 %}
+                <li class="waves-effect"><a href="?{% url_replace request 'page' num %}#search_series">{{ num }}</a></li>
+              {% elif page_obj_series.paginator.num_pages <= 8 %} {# "新しい"で検索するとちょうど8ページ #}
+                <li class="waves-effect"><a href="?{% url_replace request 'page' num %}#search_series">{{ num }}</a></li>
+              {% elif num >= page_obj_series.paginator.num_pages|add:"-1" %} {# 一番最後の2ページを表示 #}
+                <li class="waves-effect"><a href="?{% url_replace request 'page' num %}#search_series">{{ num }}</a></li>
+              {% elif page_obj_series.paginator.num_pages > 8 and page_obj_series.number >= num|add:"-2" and page_obj_series.number <= num|add:"2" %}
+                <li class="waves-effect"><a href="?{% url_replace request 'page' num %}#search_series">{{ num }}</a></li>
+              {% elif page_obj_series.paginator.num_pages > 8 and page_obj_series.number == num|add:"-3" %}
+                <li class="disabled"><i class="material-icons">more_horiz</i></li>
+              {% elif page_obj_series.paginator.num_pages > 8 and page_obj_series.number == num|add:"3" %}
+                <li class="disabled"><i class="material-icons">more_horiz</i></li>
+              {% endif %}
+            {% endfor %}
+
+            <!-- 次へ の部分 -->
+            {% if page_obj_series.has_next %}
+              <li class="waves-effect">
+                <a href="?{% url_replace request 'page' page_obj_series.next_page_number %}#search_series">
+                  <i class="material-icons">navigate_next</i>
+                </a>
+              </li>
+            {% else %}
+              <li class="disabled">
+                <i class="material-icons">navigate_next</i>
+              </li>
+            {% endif %}
+          </ul>
+
+          <p class="center-align">
+            {{ page_obj_series.start_index }} 件目から　{{ page_obj_series.end_index }} 件目まで表示<br/>
+          </p>
+        {% endblock pagination %}
+      </div>
+    </div>
+  </div>
+</div>
