@@ -1,36 +1,32 @@
 {% extends 'opac/base.html' %}
 
-{% block style %}
-  <style>
-    .centering-box {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-{% endblock style %}
-
 {% block content %}
   <div class="container">
     <div class="row">
       <div class="col s12">
         <div class="card">
           <div class="card-content">
-        <span class="card-title">
-          {% if biblio.sub_title %}
-            {{ biblio.title }}： {{ biblio.sub_title }}
-          {% else %}
-            {{ biblio.title }}
-          {% endif %}
-        </span>
-            {% if openbd_img %}
+            <span class="card-title">
               {% if biblio.sub_title %}
-                <img class="materialboxed centering-box" data-caption="{{ biblio.title }}： {{ biblio.sub_title }}"
-                     width="250" src="{{ openbd_img }}">
+                {{ biblio.title }}： {{ biblio.sub_title }}
               {% else %}
-                <img class="materialboxed centering-box" data-caption="{{ biblio.title }}" width="250"
-                     src="{{ openbd_img }}">
+                {{ biblio.title }}
               {% endif %}
+            </span>
+            {% if openbd_img %}
+              <div class="container">
+                <div class="row">
+                  <div class="col s12 m8 push-m4">
+                    {% if biblio.sub_title %}
+                      <img class="materialboxed" data-caption="{{ biblio.title }}： {{ biblio.sub_title }}"
+                            src="{{ openbd_img }}">
+                    {% else %}
+                      <img class="materialboxed" data-caption="{{ biblio.title }}"
+                            src="{{ openbd_img }}">
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
             {% endif %}
             <table class="striped">
               <tbody>
