@@ -1,6 +1,5 @@
 
 import requests
-import json
 import re
 
 pattern_response = re.compile(r'\s+|\[|\]')
@@ -12,7 +11,9 @@ def confirm_source_exist(isbn_13):
     if isbn_13 == '':
         return False
 
-    url = f'https://api.openbd.jp/v1/get?isbn={isbn_13}&pretty'
+    # f_stringが使えるようになるのはpython 3.6以降
+    # url = f'https://api.openbd.jp/v1/get?isbn={isbn_13}&pretty'
+    url = 'https://api.openbd.jp/v1/get?isbn={}&pretty'.format(isbn_13)
 
     r = requests.get(url)
     # print(response.text)
