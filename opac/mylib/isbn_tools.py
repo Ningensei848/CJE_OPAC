@@ -13,7 +13,7 @@ def confirm_source_exist(isbn_13):
 
     # f_stringが使えるようになるのはpython 3.6以降
     # url = f'https://api.openbd.jp/v1/get?isbn={isbn_13}&pretty'
-    url = 'https://api.openbd.jp/v1/get?isbn={}&pretty'.format(isbn_13)
+    url = 'https://api.openbd.jp/v1/get?isbn={isbn}&pretty'.format(isbn=isbn_13)
 
     r = requests.get(url)
     # print(response.text)
@@ -37,7 +37,9 @@ def confirm_source_exist(isbn_13):
 def isbn10_to_13(isbn_10):
 
     isbn_10_without_hyphen = ''.join(isbn_10.split('-'))
-    temp = f'978{isbn_10_without_hyphen[0:-1]}'  # 末尾はチェックディジットなので省く
+    # f_stringが使えるようになるのはpython 3.6以降
+    # temp = f'978{isbn_10_without_hyphen[0:-1]}'  # 末尾はチェックディジットなので省く
+    temp = '978{isbn}'.format(isbn=isbn_10_without_hyphen[0:-1])  # 末尾はチェックディジットなので省く
     total = 0
     for i in range(len(temp)):
         if not i % 2:  # Even
