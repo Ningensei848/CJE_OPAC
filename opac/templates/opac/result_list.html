@@ -1,5 +1,9 @@
 {% extends 'opac/base.html' %}
 
+{% block head_title %}
+  "{{ query }}" の検索結果 | {{ page_obj_title.start_index }} 件目から　{{ page_obj_title.end_index }} 件目
+{% endblock head_title %}
+
 {% block content %}
 
   <ul class="tabs">
