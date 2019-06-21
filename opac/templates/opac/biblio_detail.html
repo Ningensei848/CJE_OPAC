@@ -5,12 +5,13 @@
   <meta name="twitter:site" content="@Ningensei848"/>
   <meta property="og:url" content="{{ page_url }}"/>
   <meta property="og:title"
-        content="{% if biblio.sub_title %}
-                    書誌の詳細 | {{ biblio.title }}： {{ biblio.sub_title }}
-                 {% else %}
-                    書誌の詳細 | {{ biblio.title }}
-                 {% endif %}"/>
-  <meta property="og:description" content="「{{ query }}」で検索して『{{ biblio.title }}』を見つけました"/>
+        content="{% if biblio.sub_title %}書誌の詳細 | {{ biblio.title }}：
+          {{ biblio.sub_title }}{% else %}書誌の詳細 | {{ biblio.title }}{% endif %}"/>
+  <meta property="og:description" content="OPAC for JBISCで 『{% if biblio.sub_title %}
+                                                                {{ biblio.title }}： {{ biblio.sub_title }}
+                                                              {% else %}
+                                                                {{ biblio.title }}
+                                                              {% endif %}』 の詳細を見つける"/>
   {% if openbd_img %}
     <meta property="og:image" content="{{ openbd_img }}">
     {% else %}{# 書影が存在しなければ #}
