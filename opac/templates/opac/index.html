@@ -97,7 +97,8 @@
                       汎用性と拡張性の組み合わせで、jQueryは何百万もの人々がJavaScriptを書く方法を変えました。(translated by Google)
                     </blockquote>
                     <div class="center-align">
-                      <a href="https://jquery.com/" class="waves-effect waves-light btn" target="_blank">Official page</a>
+                      <a href="https://jquery.com/" class="waves-effect waves-light btn" target="_blank">Official
+                        page</a>
                     </div>
                   </div>
                 </li>
@@ -110,7 +111,8 @@
                       (translated by Google)
                     </blockquote>
                     <div class="center-align">
-                      <a href="https://materializecss.com/" class="waves-effect waves-light btn" target="_blank">Official page</a>
+                      <a href="https://materializecss.com/" class="waves-effect waves-light btn" target="_blank">Official
+                        page</a>
                     </div>
                   </div>
                 </li>
@@ -125,7 +127,8 @@
                       </blockquote>
                     </span>
                     <div class="center-align">
-                      <a href="https://bit.ly/2KghvLx" class="waves-effect waves-light btn" target="_blank">view in wikipedia</a>
+                      <a href="https://bit.ly/2KghvLx" class="waves-effect waves-light btn" target="_blank">view in
+                        wikipedia</a>
                     </div>
                   </div>
                 </li>
@@ -168,7 +171,8 @@
                       検索結果一覧から書誌詳細をみることで画像が確認できる。
                     </span>
                     <div class="center-align">
-                      <a href="https://openbd.jp/" class="waves-effect waves-light btn" target="_blank">Official page</a>
+                      <a href="https://openbd.jp/" class="waves-effect waves-light btn" target="_blank">Official
+                        page</a>
                     </div>
                   </div>
                 </li>
@@ -246,33 +250,33 @@
           <ul class="collapsible popout">
             <li class="active">
               <div class="collapsible-header"><i class="material-icons">place</i>OPAC URL</div>
-              <div class="collapsible-body">
+              <div class="collapsible-body center-align">
                 <span>
-                  構築した OPAC の URL(もしくはリンク)
-                  <div class="center-align">
-                     <a href="https://cgi.u.tsukuba.ac.jp/~s1611502/django.cgi/opac/"
-                        class="waves-effect waves-light btn" target="_blank">Go OPAC</a>
-                  </div>
+                  <a href="https://cgi.u.tsukuba.ac.jp/~s1611502/django.cgi/opac/"
+                     class="waves-effect waves-light btn" target="_blank">Go OPAC</a>
                 </span>
               </div>
             </li>
             <li>
               <div class="collapsible-header"><i class="material-icons">folder</i>Source</div>
-              <div class="collapsible-body">
+              <div class="collapsible-body center-align">
                 <span>
-                  CGI プログラムのソースリストおよびその説明<br/>
-                  <div class="center-align">
-                     <a href="https://github.com/Ningensei848/CJE_OPAC"
-                        class="waves-effect waves-light btn" target="_blank">Go Github</a>
-                  </div>
+                  <a href="https://github.com/Ningensei848/CJE_OPAC"
+                     class="waves-effect waves-light btn" target="_blank">Go Github</a>
                 </span>
               </div>
             </li>
             <li>
               <div class="collapsible-header"><i class="material-icons">layers</i>Database</div>
               <div class="collapsible-body">
+                <img src="http://drive.google.com/uc?export=view&id=18k9_s0BM0zafvGNP4YoVu59mp4tHCHZx"
+                     class="materialboxed responsive-img" data-caption="リレーション (テーブル) の構造とその説明">
                 <span>
-                  リレーション (テーブル) の構造とその説明<br/>
+                  19 のカラムに分割してデータベースへ保存した。Not Null 制約が付いているが、
+                  blank は許容しているため、書誌に項目が該当しない場合、空白をもたせている。
+                  本来であれば、著者や編者のテーブルを別に用意して外部キー制約を設けたり、
+                  複数の項目を持つ場合があればそれも別のテーブルとして保持するように正規化したりすべきだが、
+                  理解がそこまで追いついていなかったのと、時間的制約から実装を諦めた。
                 </span>
               </div>
             </li>
@@ -359,13 +363,19 @@
             <li>
               <div class="collapsible-header"><i class="material-icons">whatshot</i>Knowledge</div>
               <div class="collapsible-body">
-                <span>実際に構築してみて得られた知見</span>
+                <span>
+                  SQL を書くのが苦手であるということが改めてわかった。
+                  というのも、殆ど書いたことがないというのに加えて、
+                  高速化のために必要な基礎知識がまるっきり不足しているということが判明した。
+                  つまり、論理学であったり関係だったりの情報が抜け落ちている。
+                  本当にスケールが必要なプロダクトを作ることになったときに、困らないようにどこかで学び直さねばならない。
+                </span>
               </div>
             </li>
           </ul>
         </div>
         <div class="card-action center-align">
-          <a href="https://www.u.tsukuba.ac.jp/~s1611502/CJE/report.pdf" target="_blank"
+          <a href="https://www.u.tsukuba.ac.jp/~s1611502/cje001_final_report.pdf" target="_blank"
              class="waves-effect waves-light">view local report file</a>
         </div>
       </div>
