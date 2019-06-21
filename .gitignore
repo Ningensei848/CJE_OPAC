@@ -11,6 +11,11 @@ Pipfile*
 django/
 pytz/
 sqlparse/
+certifi/
+chardet/
+idna/
+requests/
+urllib3/
 static/
 
 
