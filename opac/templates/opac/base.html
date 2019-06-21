@@ -12,6 +12,7 @@
     <meta name="description" content=""> {# content属性にページの紹介文を記述 #}
     <meta name="author" content="K. Kubokawa"> {# content属性にページの著者情報を記述 #}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta %}{% endblock meta %}
     <!-- Install Fonts and Icons -->
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,7 +45,7 @@
 
       /*Black color to the text*/
       .tabs .tab a {
-          color: #2e7d32;
+        color: #2e7d32;
       }
 
       /*Text color on hover*/
