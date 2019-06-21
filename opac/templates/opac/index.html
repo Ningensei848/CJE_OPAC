@@ -60,6 +60,7 @@
     </div>
 
   </div>
+
   <div id="description" class="col s12">
     <div class="container">
       <div class="card">
@@ -72,10 +73,10 @@
               <li class="tab"><a href="#how_to_work">How to work</a></li>
             </ul>
           </div>
-          <div class="card-content grey lighten-4">
+          <div class="card-content teal lighten-5">
             <div id="how_to_design">
               <span class="card-title">もはや jQuery を必要としない ――。</span>
-              <blockquote>
+              <blockquote class="grey lighten-2">
                 We’re excited to announce that jQuery is no longer a dependency in 1.0!<br> - <a
                       href="https://medium.com/@materializecss/materialize-to-1-0-and-beyond-e0233b8ac15"
                       target="_blank">The
@@ -89,26 +90,27 @@
                 <li>
                   <div class="collapsible-header"><i class="material-icons">brush</i>jQuery とは</div>
                   <div class="collapsible-body">
-                    <span>jQueryは高速、小型、そして機能豊富なJavaScriptライブラリです。
+                    <blockquote class="grey lighten-2">
+                      jQueryは高速、小型、そして機能豊富なJavaScriptライブラリです。
                       HTMLドキュメントのトラバーサルと操作、イベント処理、アニメーション、そしてAjaxのようなことが、
                       多数のブラウザにわたって機能する使いやすいAPIによってさらに簡単になります。
                       汎用性と拡張性の組み合わせで、jQueryは何百万もの人々がJavaScriptを書く方法を変えました。(translated by Google)
-                      </span>
+                    </blockquote>
                     <div class="center-align">
-                      <a href="https://jquery.com/" class="waves-effect waves-light btn">Official page</a>
+                      <a href="https://jquery.com/" class="waves-effect waves-light btn" target="_blank">Official page</a>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">color_lens</i>Materialize とは</div>
                   <div class="collapsible-body">
-                    <span>
+                    <blockquote class="grey lighten-2">
                       Googleが作成および設計したMaterial Designは、成功したデザインの古典的な原則と革新性およびテクノロジーを組み合わせたデザイン言語です。
                       Googleの目標は、あらゆるプラットフォーム上のすべての製品にわたって統一されたユーザーエクスペリエンスを可能にするデザインシステムを開発することです。
                       (translated by Google)
-                    </span>
+                    </blockquote>
                     <div class="center-align">
-                      <a href="https://materializecss.com/" class="waves-effect waves-light btn">Official page</a>
+                      <a href="https://materializecss.com/" class="waves-effect waves-light btn" target="_blank">Official page</a>
                     </div>
                   </div>
                 </li>
@@ -116,14 +118,14 @@
                   <div class="collapsible-header"><i class="material-icons">tablet</i>レスポンシブデザイン とは</div>
                   <div class="collapsible-body">
                     <span>
-                      <blockquote>
+                      <blockquote class="grey lighten-2">
                         レスポンシブウェブデザイン (Responsive Web Design, RWD) は、
                       閲覧者の画面サイズまたはウェブブラウザに応じてデスクトップウェブページが閲覧できることを目指したウェブデザインの手法。
                       加えて、1つのウェブサイトで多様なデバイスを同様にサポートすることもレスポンシブウェブデザインのタスクに含まれている点を理解しておくことが重要である。
                       </blockquote>
                     </span>
                     <div class="center-align">
-                      <a href="https://bit.ly/2KghvLx" class="waves-effect waves-light btn">view in wikipedia</a>
+                      <a href="https://bit.ly/2KghvLx" class="waves-effect waves-light btn" target="_blank">view in wikipedia</a>
                     </div>
                   </div>
                 </li>
@@ -157,13 +159,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="collapsible-header"><i class="material-icons">whatshot</i>全学計算機上でDjango via CGI</div>
+                  <div class="collapsible-header"><i class="material-icons">image</i>書影API(openBD)による画像添付</div>
                   <div class="collapsible-body">
                     <span>
-                      最も苦労したのが、このDjangoを全学計算機上で動かすことだ。
-                      いろいろな制約に苦しめられながらも、なんとかCGI経由で動かすことができた。
-                      機会があれば、また別途詳細をまとめた記事を書こうと思う（書かないかも）
+                      ISBN13をキーとして様々な書誌情報が取得できるAPIに「openBD」というものがあるのを聞いた。
+                      今回使ったデータはすべてISBNが無いかISBN10 (旧仕様)だったが、現行の新仕様に沿って裏で処理を施しISBN13に変換した。
+                      それをキーとしてAPIにPOSTすることでJSONが返ってくるが、いくつかある要素のうち、書影画像だけ抜き出してきて貼り付けた。
+                      検索結果一覧から書誌詳細をみることで画像が確認できる。
                     </span>
+                    <div class="center-align">
+                      <a href="https://openbd.jp/" class="waves-effect waves-light btn" target="_blank">Official page</a>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -171,9 +177,9 @@
 
             <div id="how_to_work">
               <span class="card-title">Don't repeat yourself</span>
-              <blockquote>
+              <blockquote class="grey lighten-2">
                 Django makes it easier to build better Web apps more quickly and with less code. <br/>
-                - <a href="https://www.djangoproject.com/">Django Official Page</a>
+                - <a href="https://www.djangoproject.com/" target="_blank">Django Official Page</a>
               </blockquote>
               <p>webページの裏側で動くシステムを構築するために、Pythonで記述されたフレームワークの一つである "Django" を採用した。
                 強力なORMを持ち、ほぼSQL文を書くこと無く検索クエリ等を扱うことができた。また、テンプレートエンジンを用いて、
@@ -194,7 +200,7 @@
                   <div class="collapsible-header"><i class="material-icons">build</i>ORM とは</div>
                   <div class="collapsible-body">
                     <span>
-                    <blockquote>
+                    <blockquote class="grey lighten-2">
                       オブジェクト関係マッピング（英: Object-relational mapping、O/RM、ORM）とは、
                       データベースとオブジェクト指向プログラミング言語の間の非互換なデータを変換するプログラミング技法である。
                       オブジェクト関連マッピングとも呼ぶ。
@@ -211,7 +217,7 @@
                   <div class="collapsible-header"><i class="material-icons">drive_eta</i>テンプレートエンジン とは</div>
                   <div class="collapsible-body">
                     <span>
-                      <blockquote>
+                      <blockquote class="grey lighten-2">
                         テンプレートエンジンはテンプレートと呼ばれる雛形と、あるデータモデルで表現される入力データを合成し、
                       成果ドキュメントを出力するソフトウェアまたはソフトウェアコンポーネントである。
                       テンプレートおよび成果ドキュメントは複数のこともある。成果ドキュメントには様々なフォーマットのものがあり、
