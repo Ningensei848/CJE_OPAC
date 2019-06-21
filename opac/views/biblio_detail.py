@@ -22,6 +22,10 @@ class BiblioDetailView(DetailView):
 
         context = super().get_context_data(**kwargs)
         nbc = self.kwargs.get('nbc')
+
+        page_url = 'https://cgi.u.tsukuba.ac.jp/~s1611502/django.cgi/opac/detail/' + nbc
+        context['page_url'] = page_url
+
         biblio = self.model
         source = biblio.objects.get(nbc=nbc)
         isbn = source.isbn
