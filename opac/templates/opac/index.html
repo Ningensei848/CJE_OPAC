@@ -49,9 +49,9 @@
         <div class="card-content">
           <form class="input-field" method="get" action="{% url 'opac:result' %}">
             <i class="material-icons prefix">search</i>
-            <input id="search" type="text" name="search" class="validate" required>
+            {{ form.keywords }}
             <label for="search-input">Search</label>
-            <span class="helper-text" data-error="なんらかの入力が必要です" data-success="検索中...">
+            <span class="helper-text" data-error="なんらかの入力が必要です" data-success="待機中...">
               タイトル, 著者名, その他関連情報などのキーワードを入力してください
             </span>
           </form>
