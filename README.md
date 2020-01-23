@@ -16,6 +16,9 @@ Unfortunately, This is a private product created as part of the class in my scho
 この方とか<br />
 [https://t.co/RO9bKavuEw](https://t.co/RO9bKavuEw)
 
+この方のOPAC
+[simple OPAC](https://bit.ly/2sQQTKr)
+
 ## Requirement
 
 - python3
